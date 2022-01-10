@@ -1,0 +1,41 @@
+spring:
+  jwt_salt: 'ADFSDFSdfalin3l2bf2ljbfkjdbafkjbdfjkasdjkfbaskdbfasjkdfb'
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        order_inserts: true
+        generate_statistics: false
+        jdbc:
+          batch_size: 100
+        cache:
+          use_query_cache: false
+          use_second_level_cache: false
+          use_structured_entries: false
+          use_minimal_puts: false
+  flyway:
+    baseline-on-migrate: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    username: semperante
+    password: Sadmin
+    url: jdbc:postgresql://localhost/learn
+    hikari:
+      driver-class-name: org.postgresql.Driver
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      max-lifetime: 30000
+security:
+  basic:
+    enabled: false
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs-op
+  swagger-ui:
+    path: /api-docs
+    operationsSorter: method
